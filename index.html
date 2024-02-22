@@ -22,6 +22,29 @@
       <div class="container">
         <main id="grid-container"></main>
       </div>
+      <button id="clear-button">Clear</button>
+      <button id="grid-button">Grid</button>
+      <ul id="color-picker">
+        <li>COLOR</li>
+        <li>
+          <input id="color" type="color" value="#000000" />
+        </li>
+      </ul>
+      <div id="grid-size-slider--container">
+        <ul id="grid-size-slider">
+          <li>GRID SIZE</li>
+          <li id="slider">
+            <input
+              type="range"
+              id="grid-size"
+              name="grid-size"
+              min="2"
+              max="100"
+            />
+          </li>
+          <li id="current-size">50x50</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

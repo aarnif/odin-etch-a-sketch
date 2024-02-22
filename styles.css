@@ -27,5 +27,8 @@ body {
 .grid-item {
   display: flex;
   flex-grow: 1;
+}
+
+.grid-item--border {
   border: 1px solid #a1a1aa;
 }
