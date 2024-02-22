@@ -2,3 +2,30 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+#wrapper {
+}
+
+#container {
+}
+
+#grid-container {
+  width: 800px;
+  height: 800px;
+  display: flex;
+  background-color: #e2e8f0;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.grid-item {
+  display: flex;
+  flex-grow: 1;
+  border: 1px solid #a1a1aa;
+}
