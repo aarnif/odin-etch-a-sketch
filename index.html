@@ -19,32 +19,51 @@
   </head>
   <body>
     <div id="wrapper">
-      <div class="container">
+      <div class="toy-container">
+        <header class="header">
+          <div class="toy-name">MAGIC</div>
+          <div class="toy-name--cursive">Etch A Sketch<sup>®</sup></div>
+          <div class="toy-name">SCREEN</div>
+        </header>
         <main id="grid-container"></main>
+        <div class="controls">
+          <div class="buttons">
+            <button id="clear-button">CLEAR</button>
+            <button id="grid-button">GRID</button>
+            <ul id="color-picker">
+              <li>COLOR</li>
+              <li>
+                <input id="color" type="color" value="#000000" />
+              </li>
+            </ul>
+          </div>
+          <div id="grid-size-slider">
+            <ul id="slider--items">
+              <li>GRID SIZE</li>
+              <li id="slider">
+                <input
+                  type="range"
+                  id="grid-size"
+                  name="grid-size"
+                  min="2"
+                  max="100"
+                />
+              </li>
+              <li id="current-size">50x50</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <button id="clear-button">Clear</button>
-      <button id="grid-button">Grid</button>
-      <ul id="color-picker">
-        <li>COLOR</li>
-        <li>
-          <input id="color" type="color" value="#000000" />
-        </li>
-      </ul>
-      <div id="grid-size-slider--container">
-        <ul id="grid-size-slider">
-          <li>GRID SIZE</li>
-          <li id="slider">
-            <input
-              type="range"
-              id="grid-size"
-              name="grid-size"
-              min="2"
-              max="100"
-            />
-          </li>
-          <li id="current-size">50x50</li>
-        </ul>
-      </div>
+      <footer>
+        <div id="footer-text">Created By aarnif</div>
+        <a href="https://github.com/aarnif" target="_blank" rel="noreferrer"
+          ><img
+            id="github-icon"
+            src="images/github.svg"
+            alt="GitHub Profile Link"
+          />
+        </a>
+      </footer>
     </div>
   </body>
 </html>
