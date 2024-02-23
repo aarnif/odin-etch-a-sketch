@@ -8,13 +8,13 @@ let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
-const createGrid = (sideLength) => {
+const createGrid = (width, height) => {
   const gridContainer = document.getElementById("grid-container");
 
-  for (let i = 0; i < sideLength; ++i) {
+  for (let i = 0; i < width; ++i) {
     const gridRowContainer = document.createElement("div");
     gridRowContainer.classList.add("grid-row");
-    for (let j = 0; j < sideLength; ++j) {
+    for (let j = 0; j < height; ++j) {
       const gridRowItem = document.createElement("div");
       gridRowItem.classList.add("grid-item");
       gridRowItem.classList.add("grid-item--border");
@@ -83,11 +83,15 @@ const changeColor = (newColor) => {
   });
 };
 
-const changeGridSize = (newSize) => {
+const changeGridSize = (width, height) => {
   console.log("Changing grid size");
   const gridContainer = document.getElementById("grid-container");
   gridContainer.innerHTML = "";
-  createGrid(newSize);
+  createGrid(width, height);
+};
+
+const getHeight = (width) => {
+  return Math.round(width / (16 / 9));
 };
 
 clearButton.addEventListener("click", clearGrid);
@@ -102,17 +106,19 @@ colorPicker.addEventListener("change", (e) => {
 });
 
 gridSizeInput.addEventListener("change", (e) => {
-  const newSize = e.target.value;
-  console.log(`New grid size: ${newSize}`);
-  changeGridSize(newSize);
+  const newWidth = e.target.value;
+  const newHeight = getHeight(newWidth);
+  changeGridSize(newWidth, newHeight);
+  console.log(`New grid size: ${newWidth}x${newHeight}`);
 });
 
 gridSizeInput.addEventListener("mousemove", (e) => {
   const currentGridSize = document.getElementById("current-size");
-  const newSize = gridSizeInput.value;
-  currentGridSize.textContent = `${newSize}x${newSize}`;
+  const newWidth = e.target.value;
+  const newHeight = getHeight(newWidth);
+  currentGridSize.textContent = `${newWidth}x${newHeight}`;
 });
 
 window.onload = () => {
-  createGrid(50);
+  createGrid(50, getHeight(50));
 };
